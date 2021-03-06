@@ -26,7 +26,7 @@ class DrawPanel extends JPanel{
 		for (int i = -200; i < 200; i++) {
 			int x = i;
 			int y = (int) (QuandraticFunction.A * x * x + QuandraticFunction.B * x + QuandraticFunction.C);
-			g2.fillOval(250 + x - 2, 175 - (y - 2), 4, 4);
+			g2.fillOval(200 + x - 2, 200 - (y - 2), 4, 4);
 		}
 		System.out.printf("%f, %f, %f\n" , QuandraticFunction.A, QuandraticFunction.B, QuandraticFunction.C);
 		System.out.println("===========================");
@@ -63,10 +63,11 @@ public class QuandraticFunction extends JPanel implements ActionListener {
 	}
 
 	public static void main(String[] args) {
+		QuandraticFunction qf = new QuandraticFunction();
 		JFrame f = new JFrame();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.add(new QuandraticFunction());
-		f.add(new DrawPanel());
+		f.add(qf);
+		f.add(qf.drawPanel);
 		f.setLayout(null);
 		f.setSize(500, 400);
 		f.setVisible(true);
