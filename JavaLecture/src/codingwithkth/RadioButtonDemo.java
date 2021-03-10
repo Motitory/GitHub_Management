@@ -53,11 +53,11 @@ public class RadioButtonDemo extends JFrame implements ActionListener{
 		
 		this.add(resultPanel, BorderLayout.SOUTH);
 		
-		this.setSize(300, 150);
+		this.setSize(500, 150);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == small) {
