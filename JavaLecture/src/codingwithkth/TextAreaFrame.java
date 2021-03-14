@@ -22,7 +22,6 @@ public class TextAreaFrame extends JFrame implements ActionListener {
              textArea = new JTextArea(10, 30);
              textArea.setEditable(false);
 
- 
              add(textField, BorderLayout.NORTH);
              add(textArea, BorderLayout.CENTER);
  
