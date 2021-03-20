@@ -5,21 +5,23 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 
-public class Racquet {
+public class Racket {
 	private static final int WIDTH = 10;
 	private static final int HEIGHT = 80;
-	int x = 0;
-	int y = 0;
-	Color color;
-	int xspeed = 0;
-	int yspeed = 0;
+	private int x = 0;
+	private int y = 0;
+	private Color color;
+	private int xspeed = 0;
+	private int yspeed = 0;
+	int id;
 	private GameBoard game;
 
-	public Racquet(GameBoard game, int x, int y, Color color) {
+	public Racket(GameBoard game, int x, int y, Color color, int id) {
 		this.game = game;
 		this.x = x;
 		this.y = y;
 		this.color = color;
+		this.id = id;
 	}
 
 	public void move() {
@@ -37,10 +39,19 @@ public class Racquet {
 	}
 
 	public void keyPressed(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_UP)
-			yspeed = -3;
-		if (e.getKeyCode() == KeyEvent.VK_DOWN)
-			yspeed = 3;
+		if(this.id == 2) {
+			if (e.getKeyCode() == KeyEvent.VK_UP)
+				yspeed = -3;
+			if (e.getKeyCode() == KeyEvent.VK_DOWN)
+				yspeed = 3;
+		}
+		else if(this.id == 1) {
+			if (e.getKeyCode() == KeyEvent.VK_W)
+				yspeed = -3;
+			if (e.getKeyCode() == KeyEvent.VK_S)
+				yspeed = 3;
+			
+		}
 	}
 
 	public Rectangle getBounds() {

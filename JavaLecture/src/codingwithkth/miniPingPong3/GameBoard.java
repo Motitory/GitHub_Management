@@ -10,15 +10,19 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class GameBoard extends JPanel implements KeyListener {
-	Ball ball;
-	Racquet racquet1;
-	Racquet racquet2;
+	private Ball ball;
+	Racket racket1;
+	Racket racket2;
+	private Score score;
+	int score1 = 0;
+	int score2 = 0;
 
 	public GameBoard() {
+		score = new Score(this);
+		this.setBackground(Color.white);
+		racket1 = new Racket(this, 10, 150, Color.blue, 1);
+		racket2 = new Racket(this, 560, 150, Color.yellow, 2);
 		ball = new Ball(this, Color.red);
-		this.setBackground(Color.green);
-		racquet1 = new Racquet(this, 10, 150, Color.blue);
-		racquet2 = new Racquet(this, 560, 150, Color.yellow);
 		setFocusable(true);
 		addKeyListener(this);
 	}
@@ -29,20 +33,20 @@ public class GameBoard extends JPanel implements KeyListener {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		racquet1.keyReleased(e);
-		racquet2.keyReleased(e);
+		racket1.keyReleased(e);
+		racket2.keyReleased(e);
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		racquet1.keyPressed(e);
-		racquet2.keyPressed(e);
+		racket1.keyPressed(e);
+		racket2.keyPressed(e);
 	}
 
 	private void move() {
 		ball.move();
-		racquet1.move();
-		racquet2.move();
+		racket1.move();
+		racket2.move();
 	}
 
 	@Override
@@ -50,8 +54,9 @@ public class GameBoard extends JPanel implements KeyListener {
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
 		ball.draw(g2d);
-		racquet1.draw(g2d);
-		racquet2.draw(g2d);
+		racket1.draw(g2d);
+		racket2.draw(g2d);
+		score.draw(g2d);
 	}
 
 	public static void main(String[] args) {
