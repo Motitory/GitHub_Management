@@ -83,7 +83,7 @@ public class TicTacToe extends JPanel implements ActionListener {
 	public static void main(String[] args) {
 		JFrame f = new JFrame();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.add(new MyPanel());
+		f.add(new TicTacToe());
 		f.setSize(300, 300);
 		f.setVisible(true);
 	}
