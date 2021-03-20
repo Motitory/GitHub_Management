@@ -82,7 +82,7 @@ public class Capture3 extends JFrame implements ActionListener {
 	}
 
 //	@Override
-//	public void keyPressed(KeyEvent e) {
+//	public void keyPressed(KeyEvent e) {            
 //		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 //			System.out.println("enter 입력");
 //			try {
