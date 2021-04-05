@@ -1,5 +1,7 @@
 package ch15;
 
+import java.util.Iterator;
+
 public class MyArrayList<T> implements Iterable {
 	T[] array;
 	private int capacity = 10;
@@ -36,6 +38,12 @@ public class MyArrayList<T> implements Iterable {
 
 	public void remove(int idx) {
 
+	}
+
+	@Override
+	public Iterator iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
