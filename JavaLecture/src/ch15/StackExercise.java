@@ -41,6 +41,6 @@ public class StackExercise {
 		StringTokenizer st = new StringTokenizer("APPLE, GRAPE, BANANA, MELON, STRAWBERRY", ", ");
 		while (st.hasMoreTokens()) {
 			System.out.println("[" + st.nextToken() + "]");
-		
+		}
 	}
 }
